@@ -1,7 +1,10 @@
 import json
-import pytest
 from unittest.mock import MagicMock, patch
+
+import pytest
+
 from app.rlm_engine.repl import DockerExecutionBackend
+
 
 @pytest.fixture
 def mock_docker():
@@ -18,7 +21,7 @@ def backend(mock_docker):
 @pytest.mark.asyncio
 async def test_docker_execute_success(backend, mock_docker):
     mock_client = backend.client
-    mock_container = MagicMock()
+    MagicMock()
     mock_client.containers.run.return_value = json.dumps({
         "status": "success",
         "variables": {"x": 10}
