@@ -25,7 +25,6 @@ async def test_re_rank_results_ordering():
     assert ordered[0]["content"] == "second"
     assert ordered[1]["content"] == "third"
     assert ordered[2]["content"] == "first"
-
 @pytest.mark.asyncio
 async def test_re_rank_results_missing_ids():
     service = RLMService()
