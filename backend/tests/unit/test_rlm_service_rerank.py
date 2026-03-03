@@ -1,6 +1,6 @@
 import pytest
 from app.services.rlm_service import RLMService
-from unittest.mock import MagicMock, AsyncMock
+from unittest.mock import AsyncMock
 
 @pytest.mark.asyncio
 async def test_re_rank_results_ordering():
