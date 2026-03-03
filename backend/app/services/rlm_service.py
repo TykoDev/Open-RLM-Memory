@@ -60,7 +60,10 @@ Provide sub-queries as a JSON list of strings.
         # Prepare data for REPL (remove non-serializable objects)
         repl_results = []
         for r in results:
-            repl_results.append({k: v for k, v in r.items() if k != "memory_obj"})
+            # Optimize: copy and pop is significantly faster than dict comprehension
+            d = dict(r)
+            d.pop("memory_obj", None)
+            repl_results.append(d)
 
         session_id = context["session_id"]
 
@@ -90,11 +93,6 @@ ranked_ids = [r['id'] for r in ranked_results]
 
         # Re-order original results
         result_map = {r['id']: r for r in results}
-        ordered_results = []
-        for rid in ranked_ids:
-            if rid in result_map:
-                ordered_results.append(result_map[rid])
-
-        return ordered_results
+        return [result_map[rid] for rid in ranked_ids if rid in result_map]
 
 rlm_service = RLMService()

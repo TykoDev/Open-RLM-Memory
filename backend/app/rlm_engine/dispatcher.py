@@ -20,7 +20,7 @@ class SubLMDispatcher:
         query_type = await self._classify_query(query)
 
         # Get or create sub-LM
-        sub_llm = await self._get_sub_llm(query_type)
+        await self._get_sub_llm(query_type)
 
         # In a real implementation, this would delegate to a specialized handler
         # For MVP, we just return the query type for now

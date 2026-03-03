@@ -8,9 +8,9 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.identity import get_memory_namespace
 from app.database.connection import get_db
+from app.database.queries.memory import get_distinct_types
 from app.models.memory import Memory
 from app.models.user import User
-from app.database.queries.memory import get_distinct_types
 from app.services.memory_service import MemoryNotFoundError, MemoryService
 from app.services.pg_cache_service import pg_cache_service
 from app.services.rlm_service import rlm_service

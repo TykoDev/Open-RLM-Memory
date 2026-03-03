@@ -69,12 +69,11 @@ class MemoryService:
                 memories = await memory_queries.get_memories_by_ids(self.db, cached_ids, user_id)
                 memory_by_id = {str(memory.id): memory for memory in memories}
 
-                results = []
-                for item in cached_results:
-                    memory_id = str(item.get("memory_id"))
-                    memory = memory_by_id.get(memory_id)
-                    if memory:
-                        results.append((memory, float(item.get("score", 0.0))))
+                results = [
+                    (memory, float(item.get("score", 0.0)))
+                    for item in cached_results
+                    if (memory := memory_by_id.get(str(item.get("memory_id")))) is not None
+                ]
 
                 rlm_metrics = cached_payload.get("rlm_metrics", {"steps": 1, "sub_queries": 0})
                 rlm_metrics["used_cache"] = True

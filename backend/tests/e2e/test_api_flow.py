@@ -5,13 +5,6 @@ from httpx import AsyncClient
 @pytest.mark.asyncio
 async def test_api_memory_lifecycle(client: AsyncClient):
     # 1. Save Memory
-    save_payload = {
-        "tool": "save_memory", # Optional if using direct endpoint, but checking model
-        "content": "E2E Test Memory",
-        "type": "knowledge",
-        "tags": ["e2e"],
-        "metadata": {"test": True}
-    }
 
     # Note: The endpoint expects the body directly matching SaveMemoryRequest
     # If the user prompt implied an MCP envelope "tool", the current implementation
