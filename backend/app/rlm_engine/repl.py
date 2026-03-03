@@ -1,16 +1,15 @@
-import uuid
 import abc
 import asyncio
 import json
+import uuid
+from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass
 from typing import Any, Dict, List, Optional
-from concurrent.futures import ThreadPoolExecutor
 
 from loguru import logger
 
 try:
     import docker
-    from docker.errors import ContainerError, ImageNotFound, APIError
     DOCKER_AVAILABLE = True
 except ImportError:
     DOCKER_AVAILABLE = False

@@ -60,7 +60,10 @@ Provide sub-queries as a JSON list of strings.
         # Prepare data for REPL (remove non-serializable objects)
         repl_results = []
         for r in results:
-            repl_results.append({k: v for k, v in r.items() if k != "memory_obj"})
+            # Optimize: copy and pop is significantly faster than dict comprehension
+            d = dict(r)
+            d.pop("memory_obj", None)
+            repl_results.append(d)
 
         session_id = context["session_id"]
 
