@@ -1,0 +1,26 @@
+# CODEOWNERS
+# https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Default owners for everything in the repo
+*                       @TykoDev
+
+# Backend (Python/FastAPI)
+/backend/               @TykoDev
+/backend/app/api/       @TykoDev
+/backend/app/services/  @TykoDev
+/backend/app/rlm_engine/ @TykoDev
+
+# Frontend (React/TypeScript)
+/frontend/              @TykoDev
+/frontend/src/          @TykoDev
+
+# Infrastructure and DevOps
+/docker-compose.yml     @TykoDev
+/.github/workflows/     @TykoDev
+
+# Documentation
+/docs/                  @TykoDev
+*.md                    @TykoDev
+
+# Security-sensitive files
+SECURITY.md             @TykoDev

@@ -1,0 +1,165 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+
+    --background: 220 14% 96%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 220 83% 53%;
+    --primary-foreground: 0 0% 100%;
+    --primary-dark: 221 76% 47%;
+    --primary-dim: rgba(37, 99, 235, 0.14);
+
+    --secondary: 220 16% 98%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 220 16% 98%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 221 76% 47%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 220 83% 53%;
+
+    --bg-main: #f3f4f6;
+    --surface-main: #ffffff;
+    --surface-accent: #f9fafb;
+    --surface-light: #f9fafb;
+    --header-bg: #ffffff;
+    --border-main: #e5e7eb;
+    --border-light: #e5e7eb;
+    --log-text: #4b5563;
+    --status-success-text: #16a34a;
+    --status-success-bg: rgba(34, 197, 94, 0.2);
+    --status-success-glow: rgba(34, 197, 94, 0.45);
+
+    --texture-dot: rgba(17, 24, 39, 0.08);
+    --inset-highlight: rgba(255, 255, 255, 0.85);
+    --inset-shadow: rgba(15, 23, 42, 0.08);
+    --engraved-shadow: rgba(255, 255, 255, 0.65);
+    --scroll-track: #eef2f7;
+    --scroll-thumb: #c7ced8;
+
+    --radius: 0.125rem;
+  }
+
+  .dark {
+    color-scheme: dark;
+
+    --background: 240 25% 8%;
+    --foreground: 240 100% 94%;
+
+    --card: 240 28% 14%;
+    --card-foreground: 240 100% 94%;
+
+    --popover: 240 28% 14%;
+    --popover-foreground: 240 100% 94%;
+
+    --primary: 344 88% 51%;
+    --primary-foreground: 0 0% 100%;
+    --primary-dark: 344 100% 60%;
+    --primary-dim: rgba(240, 19, 77, 0.16);
+
+    --secondary: 240 28% 20%;
+    --secondary-foreground: 240 100% 94%;
+
+    --muted: 240 28% 20%;
+    --muted-foreground: 240 27% 64%;
+
+    --accent: 344 100% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 344 88% 51% / 0.25;
+    --input: 240 28% 20%;
+    --ring: 344 88% 51%;
+
+    --bg-main: #0f0f1a;
+    --surface-main: #1a1a2e;
+    --surface-accent: #252542;
+    --surface-light: #252542;
+    --header-bg: #0f0f1a;
+    --border-main: rgba(240, 19, 77, 0.25);
+    --border-light: rgba(240, 19, 77, 0.35);
+    --log-text: #f08a5d;
+    --status-success-text: #00ffcc;
+    --status-success-bg: rgba(0, 255, 204, 0.15);
+    --status-success-glow: rgba(0, 255, 204, 0.6);
+
+    --texture-dot: rgba(224, 224, 255, 0.09);
+    --inset-highlight: rgba(255, 255, 255, 0.05);
+    --inset-shadow: rgba(0, 0, 0, 0.6);
+    --engraved-shadow: rgba(0, 0, 0, 0.65);
+    --scroll-track: #15152a;
+    --scroll-thumb: #3a3a57;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading uppercase tracking-widest;
+  }
+}
+
+@layer utilities {
+  .matte-surface {
+    @apply bg-surface-main bg-matte-texture border border-border-main;
+    box-shadow: inset 0 1px 0 var(--inset-highlight), 0 1px 3px var(--inset-shadow);
+  }
+
+  .debossed-inset {
+    @apply bg-bg-main border border-border-main;
+    box-shadow: inset 0 2px 4px var(--inset-shadow);
+  }
+
+  .engraved-text {
+    text-shadow: 0 -1px 0 var(--engraved-shadow);
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: var(--scroll-track);
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--scroll-thumb);
+    border-radius: 3px;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}

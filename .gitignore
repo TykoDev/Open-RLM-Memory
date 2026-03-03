@@ -1,0 +1,29 @@
+node_modules/
+.env
+.env.*
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+*.egg-info/
+
+# Build artifacts
+dist/
+build/
+*.db
+
+# IDE / editor
+.vscode/
+.idea/
+
+# Project-specific
+
+
