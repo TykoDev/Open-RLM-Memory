@@ -12,7 +12,7 @@ class Settings(BaseSettings):
 
     # Database
     DB_TYPE: str = "postgres"
-    DATABASE_URL: Optional[str] = None
+    DATABASE_URL: Optional[str]
     POSTGRES_USER: Optional[str] = "postgres"
     POSTGRES_PASSWORD: Optional[str] = None
     POSTGRES_SERVER: Optional[str] = "localhost"
