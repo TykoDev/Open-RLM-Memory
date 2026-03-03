@@ -1,3 +1,6 @@
+import os
+from unittest import mock
+
 from app.core.config import Settings
 def test_resolve_optional():
     # Test None

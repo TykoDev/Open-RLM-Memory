@@ -12,9 +12,9 @@ class Settings(BaseSettings):
 
     # Database
     DB_TYPE: str = "postgres"
-    DATABASE_URL: Optional[str] = "postgresql+asyncpg://postgres:password@localhost:5432/rlm_memory"
+    DATABASE_URL: Optional[str]
     POSTGRES_USER: Optional[str] = "postgres"
-    POSTGRES_PASSWORD: Optional[str] = "password"
+    POSTGRES_PASSWORD: Optional[str] = None
     POSTGRES_SERVER: Optional[str] = "localhost"
     POSTGRES_DB: Optional[str] = "rlm_memory"
 
