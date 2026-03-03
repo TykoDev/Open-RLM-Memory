@@ -1,5 +1,4 @@
 from app.core.config import Settings
-
 def test_resolve_optional():
     # Test None
     assert Settings._resolve_optional(None, "fallback") == "fallback"
