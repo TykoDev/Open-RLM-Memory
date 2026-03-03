@@ -10,7 +10,6 @@ def test_resolve_optional():
     assert Settings._resolve_optional("value", "fallback") == "value"
     # Test value with whitespace
     assert Settings._resolve_optional("  value  ", "fallback") == "value"
-
 def test_embedding_openai_base_url_property():
     # Test with custom base URL
     s = Settings(
