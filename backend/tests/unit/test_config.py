@@ -31,7 +31,6 @@ def test_embedding_openai_base_url_property():
         OPENAI_BASE_URL="http://default:1234/v1"
     )
     assert s.embedding_openai_base_url == "http://default:1234/v1"
-
 def test_embedding_openai_api_key_property():
     # Test with custom API key
     s = Settings(
