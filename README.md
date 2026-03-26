@@ -1,4 +1,4 @@
-# Open RLM Memory
+# Open RLM (Open Recursive Language Model) Memory
 
 [![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/TykoDev/open-rlm-memory/actions/workflows/ci.yml)
 [![License: AGPLv3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://github.com/TykoDev/open-rlm-memory/blob/main/LICENSE)
